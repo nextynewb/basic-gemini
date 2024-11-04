@@ -11,7 +11,7 @@ from langchain.chains import RetrievalQA
 
 load_dotenv()
 
-TELEGRAM_BOT_TOKEN = '7307149259:AAGLm7k5PwOi_ggOKm6Ht-GhzKn0wH09XCs'
+TELEGRAM_BOT_TOKEN = 'YOUR_API_KEY' #Store in ENV
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
 
@@ -56,6 +56,10 @@ def handle_text_messages(message):
 
 # Register command handler
 bot.message_handler(commands=['start'])(start)
+
+
 bot.message_handler(content_types=['text'])(handle_text_messages)
+
+
 print("Bot is running....")
 bot.polling(none_stop=True)
